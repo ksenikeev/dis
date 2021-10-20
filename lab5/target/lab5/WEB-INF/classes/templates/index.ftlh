@@ -8,23 +8,18 @@
 
 </head>
 <body>
-<h1>Welcome ${groupp!} from freemarker template! ${date}</h1>
+<h1>Example style tmp</h1>
 
 <div class="tmp">
 <table>
     <tr>
-        <td>1</td>
-        <td>2</td>
+        <td>cell 1</td>
+        <td>cell 2</td>
     </tr>
-<#--
-    <#list groupp_list as lst>
-        <tr>
-            <td>${lst?counter}</td><td>${lst.num}</td><td>${lst.name}</td>
-        </tr>
-    </#list>
--->
 </table>
 </div>
+
+<img src="/lab5/image/776754.png" alt="">
 <p>
 </body>
 </html>
