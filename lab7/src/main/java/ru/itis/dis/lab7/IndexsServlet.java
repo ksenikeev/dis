@@ -1,4 +1,4 @@
-package ru.itis.dis.lab6;
+package ru.itis.dis.lab7;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,14 +9,10 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@WebServlet("/")
-public class Servlet1 extends HttpServlet {
+@WebServlet("/index")
+public class IndexsServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
-        request.setAttribute("groupp","root servlet");
-        request.setAttribute("date", new SimpleDateFormat("dd.MM.yyyy").format(new Date()));
-
-
         try {
             request.getRequestDispatcher("index.ftlh").forward(request,response);
         } catch (ServletException e) {

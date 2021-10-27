@@ -1,4 +1,4 @@
-package ru.itis.dis.lab6;
+package ru.itis.dis.lab7.filters;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebFilter;

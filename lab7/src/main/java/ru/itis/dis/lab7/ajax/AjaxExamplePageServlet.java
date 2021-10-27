@@ -1,4 +1,4 @@
-package ru.itis.dis.lab6;
+package ru.itis.dis.lab7.ajax;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,16 +9,13 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@WebServlet("/")
-public class Servlet1 extends HttpServlet {
+@WebServlet("/ajax_ex.html")
+public class AjaxExamplePageServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
-        request.setAttribute("groupp","root servlet");
-        request.setAttribute("date", new SimpleDateFormat("dd.MM.yyyy").format(new Date()));
-
 
         try {
-            request.getRequestDispatcher("index.ftlh").forward(request,response);
+            request.getRequestDispatcher("ajax_ex.ftlh").forward(request,response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {

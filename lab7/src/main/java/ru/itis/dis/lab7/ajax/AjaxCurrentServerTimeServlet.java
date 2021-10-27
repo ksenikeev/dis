@@ -1,4 +1,4 @@
-package ru.itis.dis.lab6;
+package ru.itis.dis.lab7.ajax;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -6,21 +6,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@WebServlet("/")
-public class Servlet1 extends HttpServlet {
+@WebServlet("/server_time")
+public class AjaxCurrentServerTimeServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
-        request.setAttribute("groupp","root servlet");
-        request.setAttribute("date", new SimpleDateFormat("dd.MM.yyyy").format(new Date()));
 
+        String serverTime = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S")
+                .format(new Date());
 
         try {
-            request.getRequestDispatcher("index.ftlh").forward(request,response);
-        } catch (ServletException e) {
-            e.printStackTrace();
+            response.getOutputStream().write(serverTime.getBytes(StandardCharsets.UTF_8));
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,4 +1,4 @@
-package ru.itis.dis.lab6;
+package ru.itis.dis.lab7.security;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,16 +9,16 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@WebServlet("/")
-public class Servlet1 extends HttpServlet {
+@WebServlet("/login.html")
+public class LoginPage extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
-        request.setAttribute("groupp","root servlet");
+        request.setAttribute("groupp","11-013");
         request.setAttribute("date", new SimpleDateFormat("dd.MM.yyyy").format(new Date()));
 
 
         try {
-            request.getRequestDispatcher("index.ftlh").forward(request,response);
+            request.getRequestDispatcher("login.ftlh").forward(request,response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {

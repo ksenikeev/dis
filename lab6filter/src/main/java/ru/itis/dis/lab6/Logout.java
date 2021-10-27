@@ -9,16 +9,15 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@WebServlet("/")
-public class Servlet1 extends HttpServlet {
+@WebServlet("/logout")
+public class Logout extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
-        request.setAttribute("groupp","root servlet");
-        request.setAttribute("date", new SimpleDateFormat("dd.MM.yyyy").format(new Date()));
 
+        request.getSession().invalidate();
 
         try {
-            request.getRequestDispatcher("index.ftlh").forward(request,response);
+            request.getRequestDispatcher("login.ftlh").forward(request,response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
