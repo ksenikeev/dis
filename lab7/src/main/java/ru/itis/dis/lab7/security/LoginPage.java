@@ -13,9 +13,6 @@ import java.util.Date;
 public class LoginPage extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
-        request.setAttribute("groupp","11-013");
-        request.setAttribute("date", new SimpleDateFormat("dd.MM.yyyy").format(new Date()));
-
 
         try {
             request.getRequestDispatcher("login.ftlh").forward(request,response);

@@ -9,9 +9,11 @@
 <h1>Welcome ${groupp!} from freemarker template! ${date!}</h1>
 
 <div>
-<form action="/lab7/logout">
+
+<form action="/lab7/logout" method="get">
     <input type="submit" value="Выход">
 </form>
+
 </div>
 
 <div>
