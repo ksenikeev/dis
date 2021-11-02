@@ -20,6 +20,8 @@ public class TestJDBCConnection {
 
             statement.execute("ALTER TABLE driver ADD CONSTRAINT pk_driver PRIMARY KEY (driver_id)");
 
+            //statement.execute("ALTER TABLE driver ADD COLUMN driver_id serial PRIMARY KEY");
+
 
             // работа с БД;
         } catch (SQLException e) {
