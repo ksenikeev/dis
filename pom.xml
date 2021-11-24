@@ -20,6 +20,9 @@
         <module>lab8DB</module>
         <module>lab9</module>
         <module>lab10rest</module>
+        <module>lab11swing</module>
+        <module>semester_2</module>
+        <module>bcserver</module>
     </modules>
 
 

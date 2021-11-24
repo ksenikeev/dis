@@ -11,25 +11,22 @@ public class ForwardingEvents extends JFrame {
         super("ForwardingEvents");
         // при закрытии окна - выход
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        // последовательное расположение
-        getContentPane().setLayout(null);
+        setSize(800, 800);
+        //getContentPane().setLayout(new BorderLayout());
+        getContentPane().setLayout(new GridLayout(2,2,15,40));
         // добавим пару кнопок
         button1 = new JButton("ОК");
-        button1.setBounds(10,10,100,20);
         button2 = new JButton("Отмена");
-        button2.setBounds(110,10,100,20);
         getContentPane().add(button1);
         getContentPane().add(button2);
         JScrollPane scrollPane = new JScrollPane(out = new JTextArea());
-        scrollPane.setBounds(10,40, 400,400);
+
         getContentPane().add(scrollPane);
         // будем следить за нажатиями кнопок
         Forwarder forwarder = new Forwarder();
         button1.addActionListener(forwarder);
         button2.addActionListener(forwarder);
         // выводим окно на экран
-        //pack();
-        setSize(800, 800);
 
         setVisible(true);
     }
