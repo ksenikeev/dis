@@ -11,9 +11,6 @@ public class BlockModel {
     private String ts;
     private String publickey;
 
-    @JsonIgnore
-    private BlockStat stat;
-
     // return as normalized JSON object
     public String toString() {
         return new StringBuilder().append("{")

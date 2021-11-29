@@ -44,7 +44,7 @@ public class TestClient {
      // Отправка блока
     public static void sendBlock(BlockModel blockModel) {
         try {
-            URL url = new URL("http://localhost:8090/dis/newblock?block=" +
+            URL url = new URL("http://188.93.211.195/dis/newblock?block=" +
                     URLEncoder.encode(blockModel.toString(),"UTF-8"));
 
             System.out.println(url);
@@ -77,7 +77,7 @@ public class TestClient {
     // Отправка блока
     public static BlockModel[] getBlockChain() {
         try {
-            URL url = new URL("http://localhost:8090/dis/chain");
+            URL url = new URL("http://188.93.211.195/dis/chain");
 
             System.out.println(url);
 

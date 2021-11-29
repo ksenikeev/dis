@@ -13,7 +13,7 @@ public class BlockchainUIController {
 
     private static Logger log = Logger.getLogger(BlockchainUIController.class.getName());
 
-    @GetMapping(value = "/blockchain/autors")
+    @GetMapping(value = "/dis/autors")
     public String chainReult(HttpServletRequest request,
                              @ModelAttribute("model") ModelMap model) {
 
