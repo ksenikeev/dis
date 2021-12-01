@@ -1,6 +1,7 @@
 package ru.itis.dis.lab11;
 
-// Техника диспетчеризации событий
+// Демонстрация Меню
+import org.bouncycastle.util.encoders.Hex;
 
 import javax.swing.*;
 import java.awt.*;
@@ -96,16 +97,16 @@ public class MenuBarDemo extends JFrame {
             PublicKey publicKey = keyPair.getPublic();
 
 
-            //privateKeyWriter.write(new String(Hex.encode(privateKey.getEncoded())));
-            //publicKeyWriter.write(new String(Hex.encode(publicKey.getEncoded())));
+            privateKeyWriter.write(new String(Hex.encode(privateKey.getEncoded())));
+            publicKeyWriter.write(new String(Hex.encode(publicKey.getEncoded())));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(
-                new Runnable() {
-                    public void run() { new MenuBarDemo(); } });
-    }
+        public static void main(String[] args) {
+            SwingUtilities.invokeLater(
+                    new Runnable() {
+                        public void run() { new MenuBarDemo(); } });
+        }
 }
