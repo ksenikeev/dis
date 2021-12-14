@@ -1,11 +1,9 @@
-package ru.itis.dis.lab11.graphics;
+package ru.itis.dis.lab11.ball;
 
 
 import javax.swing.*;
 
 import java.awt.*;
-
-import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class GraphDemo extends JFrame {
 

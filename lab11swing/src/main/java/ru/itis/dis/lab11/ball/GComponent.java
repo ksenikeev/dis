@@ -1,4 +1,4 @@
-package ru.itis.dis.lab11.graphics;
+package ru.itis.dis.lab11.ball;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,6 +9,8 @@ public class GComponent extends JComponent{
 
     int x, y, bounds = 64;
     boolean move_up, move_left;
+    int speed = 3;
+
     Image image;
 
     public GComponent() {
@@ -35,15 +37,15 @@ public class GComponent extends JComponent{
                 }
 
                 if (move_left) {
-                    x -= 1;
+                    x -= speed;
                 } else {
-                    x += 1;
+                    x += speed;
                 }
 
                 if (move_up) {
-                    y -= 1;
+                    y -= speed;
                 } else {
-                    y += 1;
+                    y += speed;
                 }
 
                 repaint();
