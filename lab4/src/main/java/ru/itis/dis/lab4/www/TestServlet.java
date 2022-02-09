@@ -2,6 +2,7 @@ package ru.itis.dis.lab4.www;
 
 
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,6 +13,12 @@ import java.io.OutputStream;
 public class TestServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
+        Cookie cookie = request.getCookies()[0];
+
+        cookie.getName();
+
+        //request.getCookies()
+
 
         try {
             OutputStream os = response.getOutputStream();

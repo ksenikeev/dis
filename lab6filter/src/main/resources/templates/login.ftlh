@@ -8,7 +8,7 @@
 <body>
 <h1>Login page</h1>
 
-<form method="post" action="/lab6/usercheck">
+<form method="post" action="/lab6/usercheck" enctype="">
     Login:
     <p><input type="text" name="username" placeholder="input login">
     <p></p>Password:

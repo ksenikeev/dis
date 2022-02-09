@@ -25,7 +25,7 @@ public class GameComponent extends JComponent implements KeyListener, MouseMotio
 
         setDoubleBuffered(true);
 
-        Timer timer = new Timer(50, new ActionListener() {
+        Timer timer = new Timer(100, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 imageIndex = (imageIndex + 1) % image.length;
@@ -94,6 +94,5 @@ public class GameComponent extends JComponent implements KeyListener, MouseMotio
     public void mouseMoved(MouseEvent e) {
         x = e.getX();
         y = e.getY();
-        System.out.println(e);
     }
 }
