@@ -9,4 +9,6 @@ public class TestComponent {
         return "Hello from TestComponent!";
     }
 
+    public TestComponent() {
+    }
 }

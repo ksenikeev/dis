@@ -39,6 +39,7 @@ public class AnnotationScaner {
 
             for (Field field : cl.getDeclaredFields()) {
                 System.out.println("\t\t" + field.getName() + " of type " + field.getType().getCanonicalName());
+
                 Type type = field.getGenericType();
                 if (type instanceof ParameterizedType) {
                     ParameterizedType pt = (ParameterizedType) type;
@@ -57,7 +58,7 @@ public class AnnotationScaner {
         for (Class<?> cl : classList) {
             /* Сканируем методы классов */
             System.out.println("\tFields of class " + cl.getName());
-            Method[] methods = cl.getMethods();
+            Method[] methods = cl.getDeclaredMethods();
             for (Method method : methods) {
                 System.out.println("\t\t" + method.getName());
             }
@@ -90,5 +91,19 @@ public class AnnotationScaner {
 
 
         System.out.println("...");
+
+        TestClass testClass = new TestClass();
+        TestComponent testComponent = new TestComponent();
+
+        try {
+            Field field = testClass.getClass().getField("testComponent");
+
+            field.set(testClass, testComponent);
+
+            testClass.print();
+
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
     }
 }

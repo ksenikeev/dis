@@ -1,22 +1,17 @@
 package ru.itis.dis.s2lab1.components;
 
+
 import ru.itis.dis.s2lab1.annotations.Component;
 import ru.itis.dis.s2lab1.annotations.Inject;
 
 @Component
-public class TestClass {
+public class Main implements Runnable {
 
-    @Inject(singleton = true)
-    public TestComponent testComponent;
+    @Inject
+    private TestComponent testComponent;
 
-    public void print() {
+    @Override
+    public void run() {
         System.out.println(testComponent.getComponentInfo());
     }
-
 }
-/*
-
-    TestClass  ---> testComponent ---> TestComponent
-
-
- */
