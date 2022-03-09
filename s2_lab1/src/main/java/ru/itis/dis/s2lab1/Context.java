@@ -18,7 +18,7 @@ public class Context {
     /*
      * 1. Сканирование структуры программы
      *  1.1 ищем компоненты @Component -> Map<Name, Type>
-     *  1.2 ищем поля @Inject -> Map<Class, Map<Name, Type>>
+     *  1.2 ищем поля @Inject
      *
      * 2. Инициализация полей @Inject
      *
@@ -53,6 +53,7 @@ public class Context {
                     Constructor constructor = cl.getConstructor();
                     Object o = constructor.newInstance();
                     components.put(cl.getSimpleName(), o);
+                    break;
                 }
             }
         }
@@ -65,10 +66,12 @@ public class Context {
                     if (Inject.class.equals(a.annotationType())) {
                         field.setAccessible(true);
                         field.set(components.get(cl.getSimpleName()), components.get(field.getType().getSimpleName()));
+                        break;
                     }
                 }
             }
         }
+
     }
 
     public static void run(Class<?> type) {
@@ -80,15 +83,16 @@ public class Context {
 
             mainApp.run();
 
-        } catch (NoSuchMethodException e) {
+        } catch (InstantiationException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         } catch (InvocationTargetException e) {
             e.printStackTrace();
-        } catch (InstantiationException e) {
+        } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }
+
 
     }
 

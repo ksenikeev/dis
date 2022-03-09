@@ -25,6 +25,9 @@
         <module>bcserver</module>
         <module>lab12UDP</module>
         <module>s2_lab1</module>
+        <module>s2_lab2</module>
+        <module>s2_lab3</module>
+        <module>s2_lab4</module>
     </modules>
 
 

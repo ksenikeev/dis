@@ -1,6 +1,5 @@
 package ru.itis.dis.s2lab1.components;
 
-
 import ru.itis.dis.s2lab1.annotations.Component;
 import ru.itis.dis.s2lab1.annotations.Inject;
 

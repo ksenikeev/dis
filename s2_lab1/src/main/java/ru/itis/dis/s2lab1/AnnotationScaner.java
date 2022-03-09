@@ -92,18 +92,5 @@ public class AnnotationScaner {
 
         System.out.println("...");
 
-        TestClass testClass = new TestClass();
-        TestComponent testComponent = new TestComponent();
-
-        try {
-            Field field = testClass.getClass().getField("testComponent");
-
-            field.set(testClass, testComponent);
-
-            testClass.print();
-
-        } catch (NoSuchFieldException | IllegalAccessException e) {
-            e.printStackTrace();
-        }
     }
 }
