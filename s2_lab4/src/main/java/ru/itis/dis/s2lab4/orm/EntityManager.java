@@ -5,17 +5,17 @@ public interface EntityManager {
     /**
      * Метод сохраняет в БД объект var1
      */
-    void persist(Object var1) throws Exception;// insert
+    void persist(Object var1) throws Exception;//SQL insert
 
     /**
      * Метод обновляет в БД данные, соответствующие объекту
      */
-    <T> T merge(T var1); // update ...
+    <T> T merge(T var1); //SQL update ...
 
     /**
      * Метод удаляет объект из БД
      */
-    void remove(Object var1); // delete
+    void remove(Object var1); //SQL delete
 
     /**
      * Метод запрашивает из базы данных информацию, соответствующую первичному ключу var2.
@@ -24,8 +24,8 @@ public interface EntityManager {
      * @param var1 - тип создаваемого объекта
      * @param var2 - значение первичного ключа
      */
-    <T> T find(Class<T> var1, Object var2); // select * from ... where id= ...
+    <T> T find(Class<T> var1, Object var2); //SQL select * from ... where id= ...
 
-    void refresh(Object var1);
+    //void refresh(Object var1);
 
 }
