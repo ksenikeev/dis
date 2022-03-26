@@ -6,7 +6,13 @@
 </head>
 <body>
 <div>
-    <h1>${user.name}</h1>
+    <h1>${user}</h1>
+
+    <form method="post" enctype="application/x-www-form-urlencoded" action="/save">
+        <div><label for="username">username:</label><input type="text" id="username"></div>
+        <div><label for="password">passsword:</label><input type="text" id="password"></div>
+        <div><input type="submit"></div>
+    </form>
 </div>
 </body>
 </html>
