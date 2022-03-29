@@ -7,6 +7,7 @@
 <body>
 <div>
     <h1>${user}</h1>
+    <h1>${text!}</h1>
 
     <form method="post"  action="/save">
         <div><label for="username">username:</label><input type="text" name="userName" id="username"></div>

@@ -14,12 +14,16 @@ import java.util.Date;
 @Controller
 public class RootController {
 
+    @TextInject
+    private String text;
+
     @Autowired
     private UserRepository repository;
 
     @GetMapping("/")
     public String getIndex(Model model) {
         model.addAttribute("user", "user");
+        model.addAttribute("text", text);
         return "index";
     }
 
