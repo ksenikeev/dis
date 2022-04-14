@@ -1,9 +1,9 @@
-package ru.itis.dis.s2lab7.repositories;
+package ru.itis.dis.s2lab8.repositories;
 
 import org.springframework.stereotype.Repository;
-import ru.itis.dis.s2lab7.controllers.EM;
-import ru.itis.dis.s2lab7.models.User;
-import ru.itis.dis.s2lab7.models.UserData;
+import ru.itis.dis.s2lab8.models.User;
+import ru.itis.dis.s2lab8.models.UserData;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -14,14 +14,11 @@ import java.util.List;
 @Repository
 public class UserRepository {
 
-    @EM
-    private EntityManager entityManager;
-
     private static EntityManagerFactory entityManagerFactory;
 
     static {
         entityManagerFactory =
-                Persistence.createEntityManagerFactory("lab7");
+                Persistence.createEntityManagerFactory("lab8");
     }
 
     private List<User> users = new ArrayList<>();

@@ -8,6 +8,9 @@ import ru.itis.dis.s2lab7.dto.UserDto;
 import ru.itis.dis.s2lab7.models.User;
 import ru.itis.dis.s2lab7.models.UserData;
 import ru.itis.dis.s2lab7.repositories.UserRepository;
+import ru.itis.dis.s2lab7.service.TestProfiling;
+import ru.itis.dis.s2lab7.service.TestProfilingImpl;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -18,10 +21,14 @@ public class RootController {
     private String text;
 
     @Autowired
+    private TestProfiling testProfiling;
+
+    @Autowired
     private UserRepository repository;
 
     @GetMapping("/")
     public String getIndex(Model model) {
+        testProfiling.test();
         model.addAttribute("user", "user");
         model.addAttribute("text", text);
         return "index";

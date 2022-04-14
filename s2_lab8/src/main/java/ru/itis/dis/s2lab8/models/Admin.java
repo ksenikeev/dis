@@ -1,29 +1,29 @@
-package ru.itis.dis.s2lab7.models;
+package ru.itis.dis.s2lab8.models;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "users")
-public class User {
+public class Admin extends UserData {
 
-    @Id
-    @GeneratedValue
-    private Long id;
-
-    private String name;
-
-    private String password;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    private UserData userData;
-
+    @Override
     public Long getId() {
         return id;
     }
 
+    @Override
     public void setId(Long id) {
         this.id = id;
     }
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Long id;
+
+    private String name;
+
+    private String role;
+
+    private String password;
 
     public String getName() {
         return name;
@@ -41,11 +41,11 @@ public class User {
         this.password = password;
     }
 
-    public UserData getUserData() {
-        return userData;
+    public String getRole() {
+        return role;
     }
 
-    public void setUserData(UserData userData) {
-        this.userData = userData;
+    public void setRole(String role) {
+        this.role = role;
     }
 }
