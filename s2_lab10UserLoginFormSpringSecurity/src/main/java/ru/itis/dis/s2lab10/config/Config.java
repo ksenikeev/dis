@@ -22,13 +22,11 @@ import java.util.Properties;
 //@Import({ WebSecurityConfig.class })
 public class Config implements WebMvcConfigurer {
 
+    // Доступ к ресурсам через web
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**")
-                //jar
                 .addResourceLocations("classpath:/resources/");
-        //war
-        //.addResourceLocations("/resources/");
     }
 
     @Bean
