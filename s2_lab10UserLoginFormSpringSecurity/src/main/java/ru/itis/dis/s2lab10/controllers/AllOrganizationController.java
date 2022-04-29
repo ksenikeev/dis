@@ -6,9 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-
 public class AllOrganizationController {
-
     //@Secured({"ADMIN"})
     //@PreAuthorize("permitAll()")
     //@PreAuthorize("isAuthentificated()")
@@ -17,5 +15,4 @@ public class AllOrganizationController {
     public String getAllOrganization(Model model) {
         return "allorg";
     }
-
 }

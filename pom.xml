@@ -45,6 +45,7 @@
         <module>s2_lab10SimpleSpringSecurity</module>
         <module>s2_lab10UserLoginFormSpringSecurity</module>
         <module>turing_machine</module>
+        <module>lab10_RestAPI</module>
     </modules>
 
 
