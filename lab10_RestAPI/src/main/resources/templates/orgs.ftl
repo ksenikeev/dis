@@ -34,7 +34,7 @@
             };
 
             // POST request
-            let response = await fetch('/getorgs', {
+            let response = await fetch('/getorgs2', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json;charset=utf-8'

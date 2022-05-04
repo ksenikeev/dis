@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ru.itis.dis.lab10restapi.controllers.dto.OrganizationDTO;
 import ru.itis.dis.lab10restapi.controllers.dto.PageableDTO;
 import ru.itis.dis.lab10restapi.model.Organization;
+import ru.itis.dis.lab10restapi.repositories.EntityPageableRepository;
 import ru.itis.dis.lab10restapi.repositories.PageableOrgRepository;
 
 import java.util.Collection;
@@ -21,6 +23,9 @@ public class PagingOrgController {
 
     @Autowired
     private PageableOrgRepository repository;
+
+    @Autowired
+    private EntityPageableRepository entityPageableRepository;
 
     /*
         номер страницы (page number)
@@ -33,4 +38,13 @@ public class PagingOrgController {
         return page.getContent();
     }
 
+    @RequestMapping("/getorgs1")
+    public Collection<OrganizationDTO> getOrganizations1(@RequestBody PageableDTO pageableDTO) {
+        return entityPageableRepository.getOrgs(pageableDTO);
+    }
+
+    @RequestMapping("/getorgs2")
+    public Collection<Organization> getOrganizations2(@RequestBody PageableDTO pageableDTO) {
+        return entityPageableRepository.getOrgs2(pageableDTO);
+    }
 }
