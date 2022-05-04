@@ -11,17 +11,6 @@ import ru.itis.dis.lab10restapi.model.Bank;
 @SpringBootApplication
 public class SpringBootRestAPI {
     public static void main(String[] args) {
-
-        ApplicationContext context = SpringApplication.run(SpringBootRestAPI.class, args);
-
-        Bank bank = new Bank();
-        bank.setName("bank1");
-        RestTemplate client = new RestTemplate();
-        HttpEntity<Bank> bankRequest = new HttpEntity<>(bank);
-        Bank response = client.postForObject("http://localhost:8080/addbank", bankRequest, Bank.class);
-        System.out.println(response.getName() + ", " + response.getInnerId());
-
-        WebClient webClient;
-
+        SpringApplication.run(SpringBootRestAPI.class, args);
     }
 }
