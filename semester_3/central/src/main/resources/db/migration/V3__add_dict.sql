@@ -1,0 +1,1 @@
+insert into dict_userrole (id, code, name) values (1,'ADMIN','ADMIN'), (2, 'BANKUSER','BANKUSER'), (3,'ORGUSER','ORGUSER');
