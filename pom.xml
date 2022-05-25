@@ -47,6 +47,7 @@
         <module>turing_machine</module>
         <module>lab10_RestAPI</module>
         <module>semester_3</module>
+        <module>s2_lab11ResAPISecurity</module>
     </modules>
 
 

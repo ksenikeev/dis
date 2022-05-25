@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>s2_lab10UserLoginFormSpringSecurity</artifactId>
+    <artifactId>s2_lab11ResAPISecurity</artifactId>
     <packaging>jar</packaging>
 
     <properties>
@@ -79,6 +79,18 @@
             <version>5.4.3.Final</version>
         </dependency>
 
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.13.3</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -100,5 +112,6 @@
             </plugin>
         </plugins>
     </build>
+
 
 </project>
